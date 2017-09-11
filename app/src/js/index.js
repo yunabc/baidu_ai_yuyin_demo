@@ -237,8 +237,12 @@ let audioObj = {
 			// const res = {"corpus_no":"6462887425561596494","err_msg":"success.","err_no":0,"result":["天气不错，"],"sn":"463172475921504758239"}
 
 			if(res.err_msg&&res.err_msg == 'success.'){
-				that.renderMyword(res.result[0]);
-				that.getAudio(res.result[0]);
+				var msg = res.result[0];
+				if(msg.indexOf('，') > -1){
+					msg = msg.replace('，','');
+				}
+				that.renderMyword(msg);
+				that.getAudio(msg);
 				// return that.getAnswer();
 			}else{
 				alert(res.err_msg);

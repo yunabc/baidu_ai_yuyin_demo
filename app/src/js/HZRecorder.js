@@ -131,6 +131,7 @@ import $ from './jQuery.min.js'
 
         //上传
         this.upload = function (url, token, cuid) {
+            context.close()
             var that = this;
             let audio_blob = this.getBlob();
             // console.log(audio_blob);
@@ -182,6 +183,7 @@ import $ from './jQuery.min.js'
                             "Content-Type":'application/json'
                         },
                         success:function(res){
+
                             resolve(res);
                         },
                         failed:function(err){

@@ -1,0 +1,214 @@
+{
+	"variables": [],
+	"info": {
+		"name": "百度AI",
+		"_postman_id": "ba594837-752f-82e3-5abd-7ce942395842",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "ask robot",
+			"request": {
+				"url": {
+					"raw": "http://api.aicp.baidu.com/api/v1/core/query?version=20170905",
+					"protocol": "http",
+					"host": [
+						"api",
+						"aicp",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"api",
+						"v1",
+						"core",
+						"query"
+					],
+					"query": [
+						{
+							"key": "version",
+							"value": "20170905",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "AICP 4cf0ebd2-db1b-44fc-8e30-7e9ceca0cb76",
+						"description": ""
+					},
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"query_text\":\"查航班\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "获取语音Access Token",
+			"request": {
+				"url": {
+					"raw": "https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=I3lA38aA1vm8iHaQ17rmQhgE&client_secret=euAVoCzDXmpj25eOULDVT7lfluBcmwNL",
+					"protocol": "https",
+					"host": [
+						"aip",
+						"baidubce",
+						"com"
+					],
+					"path": [
+						"oauth",
+						"2.0",
+						"token"
+					],
+					"query": [
+						{
+							"key": "grant_type",
+							"value": "client_credentials",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_id",
+							"value": "I3lA38aA1vm8iHaQ17rmQhgE",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "client_secret",
+							"value": "euAVoCzDXmpj25eOULDVT7lfluBcmwNL",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "ASR",
+			"request": {
+				"url": {
+					"raw": "http://vop.baidu.com/server_api?lan=zh&cuid=alexgreenbar_easemob&token=24.d3a321ea3ca5f774066206592314f593.2592000.1507192668.282335-10096004",
+					"protocol": "http",
+					"host": [
+						"vop",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"server_api"
+					],
+					"query": [
+						{
+							"key": "lan",
+							"value": "zh",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "cuid",
+							"value": "alexgreenbar_easemob",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "token",
+							"value": "24.d3a321ea3ca5f774066206592314f593.2592000.1507192668.282335-10096004",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "audio/amr;rate=8000",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "file",
+					"file": {
+						"src": ""
+					}
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "TTS",
+			"request": {
+				"url": {
+					"raw": "http://tsn.baidu.com/text2audio?tex=环信人工智能开发团队&lan=zh&tok=24.d3a321ea3ca5f774066206592314f593.2592000.1507192668.282335-10096004&ctp=1&cuid=alexgreenbar_easemob",
+					"protocol": "http",
+					"host": [
+						"tsn",
+						"baidu",
+						"com"
+					],
+					"path": [
+						"text2audio"
+					],
+					"query": [
+						{
+							"key": "tex",
+							"value": "环信人工智能开发团队",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "lan",
+							"value": "zh",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "tok",
+							"value": "24.d3a321ea3ca5f774066206592314f593.2592000.1507192668.282335-10096004",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "ctp",
+							"value": "1",
+							"equals": true,
+							"description": ""
+						},
+						{
+							"key": "cuid",
+							"value": "alexgreenbar_easemob",
+							"equals": true,
+							"description": ""
+						}
+					],
+					"variable": []
+				},
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
